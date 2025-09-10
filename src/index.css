@@ -2,41 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* EchoVerse Design System - Literary & Audio Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Literary color palette */
+    --background: 28 25% 97%;
+    --foreground: 28 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 28 20% 98%;
+    --card-foreground: 28 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 28 20% 98%;
+    --popover-foreground: 28 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Warm literary primary - deep amber/gold */
+    --primary: 35 60% 45%;
+    --primary-foreground: 28 25% 97%;
+    --primary-hover: 35 70% 40%;
+    --primary-glow: 35 60% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft parchment secondary */
+    --secondary: 28 30% 92%;
+    --secondary-foreground: 28 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted text colors */
+    --muted: 28 25% 90%;
+    --muted-foreground: 28 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - literary blue */
+    --accent: 215 25% 35%;
+    --accent-foreground: 28 25% 97%;
+    --accent-hover: 215 30% 30%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Audio/processing colors */
+    --audio: 160 50% 45%;
+    --audio-foreground: 28 25% 97%;
+    --audio-glow: 160 60% 60%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Tone colors */
+    --tone-neutral: 35 40% 50%;
+    --tone-suspenseful: 0 60% 50%;
+    --tone-inspiring: 215 60% 50%;
 
-    --radius: 0.5rem;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 28 25% 97%;
+
+    --border: 28 20% 85%;
+    --input: 28 20% 94%;
+    --ring: 35 60% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(35 60% 45%), hsl(35 70% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(28 25% 97%), hsl(35 20% 90%));
+    --gradient-audio: linear-gradient(90deg, hsl(160 50% 45%), hsl(160 60% 55%));
+    --gradient-processing: linear-gradient(270deg, hsl(35 60% 45%), hsl(215 25% 35%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(28 15% 15% / 0.08);
+    --shadow-glow: 0 0 30px hsl(35 60% 45% / 0.3);
+    --shadow-audio: 0 8px 25px hsl(160 50% 45% / 0.2);
+
+    /* Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +92,62 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark literary theme */
+    --background: 28 15% 8%;
+    --foreground: 28 25% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 28 20% 10%;
+    --card-foreground: 28 25% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 28 20% 10%;
+    --popover-foreground: 28 25% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Brighter primary for dark mode */
+    --primary: 35 70% 55%;
+    --primary-foreground: 28 15% 8%;
+    --primary-hover: 35 80% 50%;
+    --primary-glow: 35 70% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Dark mode secondary */
+    --secondary: 28 15% 18%;
+    --secondary-foreground: 28 25% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 28 15% 15%;
+    --muted-foreground: 28 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Brighter accent for dark mode */
+    --accent: 215 40% 55%;
+    --accent-foreground: 28 15% 8%;
+    --accent-hover: 215 50% 50%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Audio colors for dark mode */
+    --audio: 160 60% 55%;
+    --audio-foreground: 28 15% 8%;
+    --audio-glow: 160 70% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Tone colors for dark mode */
+    --tone-neutral: 35 50% 60%;
+    --tone-suspenseful: 0 70% 60%;
+    --tone-inspiring: 215 70% 60%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 28 15% 8%;
+
+    --border: 28 15% 22%;
+    --input: 28 15% 18%;
+    --ring: 35 70% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(35 70% 55%), hsl(35 80% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(28 15% 8%), hsl(35 15% 12%));
+    --gradient-audio: linear-gradient(90deg, hsl(160 60% 55%), hsl(160 70% 65%));
+    --gradient-processing: linear-gradient(270deg, hsl(35 70% 55%), hsl(215 40% 55%));
+
+    /* Update shadows for dark mode */
+    --shadow-soft: 0 4px 20px hsl(28 15% 5% / 0.3);
+    --shadow-glow: 0 0 30px hsl(35 70% 55% / 0.4);
+    --shadow-audio: 0 8px 25px hsl(160 60% 55% / 0.3);
+
+    /* Dark mode sidebar */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +166,43 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Smooth transitions for all elements */
+  * {
+    transition: var(--transition-smooth);
+  }
+
+  /* Focus styles */
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
